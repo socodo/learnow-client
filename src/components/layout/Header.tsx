@@ -39,11 +39,14 @@ export default function Header() {
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-4 ml-8">
-            <Button
-              className="text-[#1C398E] bg-white border border-[#1C398E] hover:bg-blue-50 hover:text-blue-800 transition-all px-6"
-            >
-              Log in
-            </Button>
+            <Link href="/auth/login">
+              <Button
+                className="text-[#1C398E] bg-white border border-[#1C398E] hover:bg-blue-50 hover:text-blue-800 transition-all px-6"
+              >
+                Log in
+              </Button>
+            </Link>
+
             <Button
               className="text-white bg-[#FE9A00] border border-[#FE9A00] hover:bg-orange-600 transition-all px-6"
             >
