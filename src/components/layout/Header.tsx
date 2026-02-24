@@ -47,11 +47,14 @@ export default function Header() {
               </Button>
             </Link>
 
-            <Button
-              className="text-white bg-[#FE9A00] border border-[#FE9A00] hover:bg-orange-600 transition-all px-6"
-            >
-              Sign up
-            </Button>
+            <Link href="/auth/signup">
+              <Button
+                className="text-white bg-[#FE9A00] border border-[#FE9A00] hover:bg-orange-600 transition-all px-6"
+              >
+                Sign up
+              </Button>
+            </Link>
+
           </div>
         </div>
       </div>
