@@ -21,7 +21,7 @@ export default function Header() {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <Input
-                className="w-full rounded-2xl border-[#D1D5DC] py-5 pl-10 focus-visible:border-[#FE9A00] focus-visible:ring-[#FE9A00]/20"
+                className="w-full rounded-2xl py-5  focus-visible:border-[#FE9A00]  border-[#D1D5DC] focus-visible:ring-[#FE9A00]/20 pl-10"
                 placeholder="Type to search..."
               />
             </div>

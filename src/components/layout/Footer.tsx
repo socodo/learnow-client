@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="max-w-48 mr-6">
               <h2 className="text-2xl font-bold mb-2 leading-8">LearnNow</h2>
               <p className="font-arimo font-normal text-sm leading-6 text-gray-300">
-                Nền tảng học trực tuyến hàng đầu, mang đến kiến thức chất lượng cao cho mọi người.
+                Leading online learning platform, bringing high-quality knowledge to everyone.
               </p>
             </div>
 
@@ -16,21 +16,21 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-10 lg:gap-16 flex-1">
               {/* About Us */}
               <div className="flex-1">
-                <h3 className="font-semibold text-base mb-4">Về chúng tôi</h3>
+                <h3 className="font-semibold text-base mb-4">About us</h3>
                 <ul className="space-y-3">
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Giới thiệu
+                      About
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Đội ngũ
+                      Team
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Tuyển dụng
+                      Careers
                     </a>
                   </li>
                   <li>
@@ -43,26 +43,26 @@ export default function Footer() {
 
               {/* Support */}
               <div className="flex-1">
-                <h3 className="font-semibold text-base mb-4">Hỗ trợ</h3>
+                <h3 className="font-semibold text-base mb-4">Support</h3>
                 <ul className="space-y-3">
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Trung tâm trợ giúp
+                      Help Center
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Liên hệ
+                      Contact
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Câu hỏi thường gặp
+                      FAQs
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Hướng dẫn thanh toán
+                      Payment Guide
                     </a>
                   </li>
                 </ul>
@@ -70,26 +70,26 @@ export default function Footer() {
 
               {/* Policies */}
               <div className="flex-1">
-                <h3 className="font-semibold text-base mb-4">Chính sách</h3>
+                <h3 className="font-semibold text-base mb-4">Policies</h3>
                 <ul className="space-y-3">
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Điều khoản sử dụng
+                      Terms of Use
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Chính sách bảo mật
+                      Privacy Policy
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Chính sách hoàn tiền
+                      Refund Policy
                     </a>
                   </li>
                   <li>
                     <a href="#" className="text-gray-300 hover:text-white transition text-sm">
-                      Quyền riêng tư
+                      Privacy
                     </a>
                   </li>
                 </ul>
@@ -97,18 +97,18 @@ export default function Footer() {
 
               {/* Newsletter */}
               <div className="flex-1">
-                <h3 className="font-semibold text-base mb-4">Đăng ký nhận tin</h3>
+                <h3 className="font-semibold text-base mb-4">Subscribe</h3>
                 <p className="text-gray-300 text-sm mb-4">
-                  Nhận thông tin khóa học mới nhất
+                  Get the latest course updates
                 </p>
                 <div className="flex flex-col gap-3">
                   <input
                     type="email"
-                    placeholder="Email của bạn"
+                    placeholder="Your email"
                     className="px-4 py-2 rounded-md bg-white/10 border border-gray-600 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                   />
                   <button className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md font-medium transition text-sm">
-                    Đăng ký
+                    Subscribe
                   </button>
                 </div>
                 {/* Social Media Icons */}
@@ -165,7 +165,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center border-t border-gray-700 pt-4">
-            <p className="text-gray-400 text-sm">© 2026 LearnNow. Bảo lưu mọi quyền.</p>
+            <p className="text-gray-400 text-sm">© 2026 LearnNow. All rights reserved.</p>
           </div>
         </div>
       </div>
