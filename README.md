@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Learnow – Frontend (Next.js Migration)
 
-## Getting Started
+> 🚀 **Migration Status:** This repository contains the Frontend application for the Learnow EdTech platform. We are currently migrating from a React SPA (Vite) to **Next.js (App Router)** to achieve Server-Side Rendering (SSR), improve SEO for course discoverability, and optimize initial page load performance.
 
-First, run the development server:
+Learnow is a modern online learning platform designed to connect students with free educational content and empower instructors to share their knowledge seamlessly.
+
+## 🎯 Why Next.js?
+
+For an EdTech platform, content visibility is crucial. By transitioning to Next.js, this frontend application benefits from:
+
+- **SEO Optimization:** Course catalog and detail pages are server-rendered, ensuring search engines can effectively index educational content.
+- **Performance Boost:** Utilizing SSR and Next.js built-in optimizations (like `next/image` and `next/font`) for a faster First Contentful Paint (FCP).
+- **Enhanced Routing:** Leveraging the Next.js App Router for intuitive, nested layouts and seamless page transitions.
+
+## 🛠️ Tech Stack
+
+- ⚛️ **Framework:** [Next.js](https://nextjs.org/) (React)
+- 🏗️ **Architecture:** App Router
+- 🎨 **Styling:** Tailwind CSS (Utility-first responsive design)
+- 📦 **State Management:** Redux Toolkit (For complex global state like video player progress and user sessions)
+- 🔗 **API Communication:** Axios / Native Fetch (Integrated with Next.js caching)
+- 🛡️ **Authentication:** JWT handling (via HTTP-only cookies / local storage strategies)
+
+## 🗺️ Frontend Migration Roadmap
+
+- [x] Initialize Next.js environment and configure Tailwind CSS.
+- [x] Migrate global UI components (Navbar, Footer, Modals) and Layouts.
+- [ ] Implement SSR for public routes: **Home**, **Course Catalog**, and **Course Details**.
+- [ ] Refactor client-side state (Redux) to sync with Next.js server components.
+- [ ] Migrate the Authentication Flow (Login/Register/Role redirection).
+- [ ] Rebuild the **Student Dashboard** and Video Player UI.
+- [ ] Rebuild the **Instructor Dashboard** (Course creation, Cloudinary upload integration).
+
+## ✨ UI/UX Features
+
+**👤 Student Experience**
+
+- Responsive course catalog with advanced filtering and search.
+- Interactive video player with progress tracking.
+- Personalized learning dashboard.
+
+**👨‍🏫 Instructor Interface**
+
+- Intuitive forms for course creation and curriculum structuring.
+- Drag-and-drop media uploads (integrated with Cloudinary via Backend).
+- Real-time enrollment statistics view.
+
+## 🚀 Getting Started (Local Development)
+
+### 1. Prerequisites
+
+Ensure you have **Node.js** (v18.17 or later) installed on your machine.
+_Note: This frontend requires the Learnow Backend API to be running locally or deployed._
+
+### 2. Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/socodo/learnow-client-nextjs.git](https://github.com/socodo/learnow-client-nextjs.git)
+cd learnow-client-nextjs
+npm install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
