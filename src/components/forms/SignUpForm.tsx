@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { signupAction } from "@/app/actions/auth.action";
+import { toast } from "sonner";
+import { useUserStore } from "@/app/stores/useUserStore";
+import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
   const [fullName, setFullName] = useState("");
@@ -15,16 +19,28 @@ export default function SignUpForm() {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const setLogin = useUserStore((state) => state.setLogin);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log({ fullName, email, password, confirmPassword, agreeToTerms });
+  const handleSubmit = async (formData: FormData) => {
+    const result = await signupAction(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    }
+
+    toast.success(result.data.message);
+    if (result?.data?.result?.fullName && result?.data?.result?.email) {
+      setLogin({
+        name: result.data.result.fullNames,
+        email: result.data.result.email,
+      });
+    }
+    router.push("/");
   };
 
   return (
     <div className="w-full max-w-md space-y-6">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form action={handleSubmit} className="space-y-4">
         {/* Full Name Field */}
         <div className="space-y-2">
           <label
@@ -40,6 +56,7 @@ export default function SignUpForm() {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
+            name="fullName"
           />
         </div>
 
@@ -58,6 +75,7 @@ export default function SignUpForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            name="email"
           />
         </div>
 
@@ -72,7 +90,9 @@ export default function SignUpForm() {
           <div className="relative">
             <Input
               id="password"
+              name="password"
               type={showPassword ? "text" : "password"}
+              autoComplete="new-password"
               placeholder="Minimum 8 characters"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -104,6 +124,8 @@ export default function SignUpForm() {
           <div className="relative">
             <Input
               id="confirmPassword"
+              name="confirmPassword"
+              autoComplete="new-password"
               type={showConfirmPassword ? "text" : "password"}
               placeholder="Re-enter password"
               value={confirmPassword}
