@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Arimo } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,6 @@ const geistMono = Geist_Mono({
 const geistArimo = Arimo({
   variable: "--font-arimo",
   subsets: ["latin"],
-
 });
 
 export const metadata: Metadata = {
@@ -31,14 +31,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${geistArimo.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${geistArimo.variable} flex min-h-screen flex-col antialiased`}
       >
         <Header></Header>
         <main className="flex-1">{children}</main>
 
         <Footer></Footer>
+        <Toaster
+          position="bottom-right"
+          richColors
+          closeButton
+          visibleToasts={4}
+          duration={3000}
+        />
       </body>
     </html>
   );
